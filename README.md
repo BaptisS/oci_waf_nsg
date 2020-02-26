@@ -32,11 +32,15 @@ This document will guide you through the steps needed to create and assign a ***
 
 1.3-	Click on your VCN then select the ***‘Network Security Groups’*** Resources type. 
 
+
 ![PMScreens](/img/01.JPG)
+
 
 1.4-	Click on the ***‘Create Network Security Group’*** button. 
 
+
 ![PMScreens](/img/02.JPG)
+
 
 1.5-	Provide a meaningful name for this new Network Security Group. (Ie. ‘OCIWAF-NSG’)
 
@@ -44,21 +48,29 @@ This document will guide you through the steps needed to create and assign a ***
 
 1.7-  Click ***‘Create’*** button to create an empty NSG. 
 
+
 ![PMScreens](/img/03.JPG)
+
 
 1.7-	In the 'Network Security Group Information' section copy the NSG OCID (click the 'Copy' link in front of 'OCID')  
 
+
 ![PMScreens](/img/04.JPG)
+ 
  
 ### 2-    Import Security Rules using Cloud Shell commands.
 
 2.1-	Start your OCI Cloud Shell session. In the OCI Console top right section, click on the Cloud Shell icon:  
 
+
 ![PMScreens](/img/05.JPG)
+
 
 2.2-	Wait few seconds for your Cloud Shell instance to be started and ready to use.
 
+
 ![PMScreens](/img/06.JPG)
+
 
 2.3-	Copy and Paste (CTRL+SHIFT+’V’) the command below in your Cloud Shell session.
 
@@ -66,6 +78,7 @@ This document will guide you through the steps needed to create and assign a ***
 wafnsg=ocid1.networksecuritygroup.oc1.eu-frankfurt-1.aaaaaaaxxxxx
 ```
 (Replace ‘ocid1.networksecuritygroup.oc1.eu-frankfurt-1.aaaaaaaxxxxx’ by your NSG OCID copied in the previous step.)
+
 
 ![PMScreens](/img/07.JPG)
 
@@ -100,18 +113,24 @@ oci network nsg rules add --nsg-id $wafnsg --security-rules file://wafnsg-443-ja
 
 ### 3-    Review the Network Security Group content. 
 
+
 ![PMScreens](/img/08.JPG)
 
-3.1-	Ensure the new NSG has been populated successfully with 50 security rules.  
+
+3.1-	Ensure the new NSG has been populated successfully.  
 
 ### 4-   [Option 1] Assign NSG to your Load Balancer Virtual Network Interfaces.
 4.1-	Go to your Load Balancer dashboard, (OCI Menu -> Networking -> Load Balancers) and then select the Network Security Groups ***‘Edit’*** link . 
 
+
 ![PMScreens](/img/09.JPG)
+
 
 4.2-	Select the new NSG (ie. OCIWAF-NSG). 
 
+
 ![PMScreens](/img/10.JPG)
+
 
 4.3-	Click on ***‘Save Changes’*** button.  
 
@@ -120,11 +139,15 @@ oci network nsg rules add --nsg-id $wafnsg --security-rules file://wafnsg-443-ja
 
 4.2- Click on the Network Security Groups ***‘Edit’*** link . 
 
+
 ![PMScreens](/img/11.JPG)
+
 
 4.2-	Select the new NSG (ie. OCIWAF-NSG). 
 
+
 ![PMScreens](/img/12.JPG)
+
 
 4.3-	Click on ***‘Save Changes’*** button.  
 

@@ -83,9 +83,9 @@ wafnsg=ocid1.networksecuritygroup.oc1.eu-frankfurt-1.aaaaaaaxxxxx
 ![PMScreens](/img/07.JPG)
 
 
-2.4-	Import Security rules. 
+2.4-	***[OPTION 1]*** Allow inbound **HTTP (TCP80) and HTTPS (TCP443)** traffic 
 
-2.4.1-	***[OPTION 1]*** Allow incoming **HTTP (TCP80) and HTTPS (TCP443)** traffic, copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
+2.4.1-	Copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
 
 ```
 wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_nsg/master/wafnsg-80-jan20_part1.json
@@ -99,8 +99,9 @@ oci network nsg rules add --nsg-id $wafnsg --ingress-security-rules file://wafns
 oci network nsg rules add --nsg-id $wafnsg --ingress-security-rules file://wafnsg-443-jan20_part2.json
 
 ```
+2.4- ***[OPTION 2]*** Allow incoming **HTTPS (TCP443) only**
 
-2.4.1- 	***[OPTION 2]*** Allow incoming **HTTPS (TCP443) only**, copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
+2.4.1- Copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
 
 ```
 wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_nsg/master/wafnsg-443-jan20_part1.json
@@ -113,11 +114,12 @@ oci network nsg rules add --nsg-id $wafnsg --security-rules file://wafnsg-443-ja
 
 ### 3-    Review the Network Security Group content. 
 
+3.1-	Ensure the new NSG has been populated successfully with security rules.
+
 
 ![PMScreens](/img/08.JPG)
 
 
-3.1-	Ensure the new NSG has been populated successfully.  
 
 ### 4-   [Option 1] Assign NSG to your Load Balancer Virtual Network Interfaces.
 4.1-	Go to your Load Balancer dashboard, (OCI Menu -> Networking -> Load Balancers) and then select the Network Security Groups ***‘Edit’*** link . 

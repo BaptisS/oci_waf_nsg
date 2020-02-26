@@ -1,0 +1,21 @@
+[
+{
+      "description": null,
+      "destination": null,
+      "destination-type": null,
+      "direction": "INGRESS",
+      "icmp-options": null,
+      "is-stateless": null,
+      "protocol": "6",
+      "source": "1.1.1.2/32",
+      "source-type": "CIDR_BLOCK",
+      "tcp-options": {
+        "destination-port-range": {
+          "max": 443,
+          "min": 443
+        },
+        "source-port-range": null
+      },
+        "udp-options": null
+    }
+]

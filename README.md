@@ -115,27 +115,20 @@ oci network nsg rules add --nsg-id $wafnsg --security-rules file://wafnsg-443-ja
 
 4.3-	Click on ***‘Save Changes’*** button.  
 
-### 4-   [Option 1] Assign NSG to your Load Balancer Virtual Network Interfaces.
-4.1-	Go to your Load Balancer dashboard, (OCI Menu -> Networking -> Load Balancers) and then select the Network Security Groups ***‘Edit’*** link . 
+### 4-   [Option 2] Assign NSG to your Web Application (Compute Instance).
+4.1-	Go to your Compute VM instance dashboard, (OCI Menu -> Compute -> Instances) and then select the desired Compute VM.
 
-![PMScreens](/img/09.JPG)
+4.2- Click on the Network Security Groups ***‘Edit’*** link . 
+
+![PMScreens](/img/11.JPG)
 
 4.2-	Select the new NSG (ie. OCIWAF-NSG). 
 
-![PMScreens](/img/10.JPG)
+![PMScreens](/img/12.JPG)
 
 4.3-	Click on ***‘Save Changes’*** button.  
 
 
-
-
-4.4-	Select the newly created Security List (Ie. OCIWAF-SL)  
-
-![PMScreens](/img/10.JPG)
-
-4.5-	Click ***‘Add Security List’*** button to assign the Security to the subnet.  
-
-![PMScreens](/img/11.JPG)
 
 ### 5-   Remove any permissive rules 
 5.1-	Remove any pre-existing permisive rules to lockdown your WAF Origin and allow only incoming traffic from the OCI WAF Public IPs.

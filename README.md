@@ -87,15 +87,15 @@ wafnsg=ocid1.networksecuritygroup.oc1.eu-frankfurt-1.aaaaaaaxxxxx
 2.4.1-	Copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
 
 ```
-wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_nsg/master/wafnsg-80-jan20_part1.json
-wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_nsg/master/wafnsg-80-jan20_part2.json
-wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_nsg/master/wafnsg-443-jan20_part1.json
-wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_nsg/master/wafnsg-443-jan20_part2.json
+wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_nsg/master/wafnsg-80-Feb20_part1.json
+wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_nsg/master/wafnsg-80-Feb20_part2.json
+wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_nsg/master/wafnsg-443-Feb20_part1.json
+wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_nsg/master/wafnsg-443-Feb20_part2.json
 
-oci network nsg rules add --nsg-id $wafnsg --ingress-security-rules file://wafnsg-80-jan20_part1.json
-oci network nsg rules add --nsg-id $wafnsg --ingress-security-rules file://wafnsg-80-jan20_part2.json
-oci network nsg rules add --nsg-id $wafnsg --ingress-security-rules file://wafnsg-443-jan20_part1.json
-oci network nsg rules add --nsg-id $wafnsg --ingress-security-rules file://wafnsg-443-jan20_part2.json
+oci network nsg rules add --nsg-id $wafnsg --ingress-security-rules file://wafnsg-80-Feb20_part1.json
+oci network nsg rules add --nsg-id $wafnsg --ingress-security-rules file://wafnsg-80-Feb20_part2.json
+oci network nsg rules add --nsg-id $wafnsg --ingress-security-rules file://wafnsg-443-Feb20_part1.json
+oci network nsg rules add --nsg-id $wafnsg --ingress-security-rules file://wafnsg-443-Feb20_part2.json
 
 ```
 2.4- ***[OPTION 2]*** Allow inbound **HTTPS (TCP443) only**
@@ -103,11 +103,11 @@ oci network nsg rules add --nsg-id $wafnsg --ingress-security-rules file://wafns
 2.4.1- Copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
 
 ```
-wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_nsg/master/wafnsg-443-jan20_part1.json
-wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_nsg/master/wafnsg-443-jan20_part2.json
+wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_nsg/master/wafnsg-443-Feb20_part1.json
+wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_nsg/master/wafnsg-443-Feb20_part2.json
 
-oci network nsg rules add --nsg-id $wafnsg --security-rules file://wafnsg-443-jan20_part1.json
-oci network nsg rules add --nsg-id $wafnsg --security-rules file://wafnsg-443-jan20_part2.json
+oci network nsg rules add --nsg-id $wafnsg --security-rules file://wafnsg-443-Feb20_part1.json
+oci network nsg rules add --nsg-id $wafnsg --security-rules file://wafnsg-443-Feb20_part2.json
 ```
 
 

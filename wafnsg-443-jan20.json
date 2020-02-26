@@ -6,7 +6,6 @@
       "direction": "INGRESS",
       "icmp-options": null,
       "is-stateless": null,
-      "is-valid": true,
       "protocol": "6",
       "source": "1.1.1.2/32",
       "source-type": "CIDR_BLOCK",

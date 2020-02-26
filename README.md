@@ -1,4 +1,3 @@
-# oci_waf_nsg
 # Lockdown OCI WAF Origin using CloudShell (Network Security Groups) #
 _An easy way to lockdown your OCI WAF Origin_ 
 

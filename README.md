@@ -6,7 +6,7 @@ When using a Web Application Firewall, it is important to apply a set of securit
 
 OCI WAF stand in front of your web application to detect and block unwanted/malicious access. . In most cases, your Web Application itself sits behind a Load Balancer. Depending on your architecture and preferences, you may want to assign security rules to your Load Balancer or Web Application subnet by using a Security List, or alternatively you may prefer to assign the security rules to your Load Balancer or Web Application Network Interfaces by using a Network Security Group.
 
-This document will guide you through the steps needed to create and assign a ***Network Security Group*** containing a list of OCI WAF public IP addresses used to send the traffic to your load balancer / Web Application. 
+This document will guide you through the steps needed to create and assign a ***Network Security Group*** containing a list of OCI WAF public IP addresses used to send the traffic to your load balancer / Web Application. If you want to use _Network Security Groups_ for this purpose please consult the following guide : https://github.com/BaptisS/oci_waf_seclist
 
 
 
@@ -98,7 +98,7 @@ oci network nsg rules add --nsg-id $wafnsg --ingress-security-rules file://wafns
 oci network nsg rules add --nsg-id $wafnsg --ingress-security-rules file://wafnsg-443-jan20_part2.json
 
 ```
-2.4- ***[OPTION 2]*** Allow incoming **HTTPS (TCP443) only**
+2.4- ***[OPTION 2]*** Allow inbound **HTTPS (TCP443) only**
 
 2.4.1- Copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
 
@@ -155,7 +155,7 @@ oci network nsg rules add --nsg-id $wafnsg --security-rules file://wafnsg-443-ja
 
 
 ### 5-   Remove any permissive rules 
-5.1-	Remove any pre-existing permisive rules to lockdown your WAF Origin and allow only incoming traffic from the OCI WAF Public IPs.
+5.1-	Once you've assigned the new NSG which contains the required security rules to allow inbound traffic from OCI WAF endpoints, you can remove any other ( more permissive ) pre-existing rules to lockdown your WAF Origin and allow only inbound traffic from the OCI WAF services.
 
 
 
@@ -164,9 +164,13 @@ oci network nsg rules add --nsg-id $wafnsg --security-rules file://wafnsg-443-ja
 
 ### Links and References :
 
+
 OCI WAF documentation and Public IPS list : https://docs.cloud.oracle.com/en-us/iaas/Content/WAF/Concepts/gettingstarted.htm
+
 
 OCI CloudShell : https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm
 
+
 OCI WAF CLI References : https://docs.cloud.oracle.com/en-us/iaas/api/#/en/waas/latest/
+
 

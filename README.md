@@ -160,5 +160,11 @@ oci network nsg rules add --nsg-id $wafnsg --security-rules file://wafnsg-443-ja
 
 
 
+### Links and References :
 
+OCI WAF documentation and Public IPS list : https://docs.cloud.oracle.com/en-us/iaas/Content/WAF/Concepts/gettingstarted.htm
+
+OCI CloudShell : https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm
+
+OCI WAF CLI References : https://docs.cloud.oracle.com/en-us/iaas/api/#/en/waas/latest/
 

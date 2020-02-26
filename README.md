@@ -2,17 +2,20 @@
 _An easy way to lockdown your OCI WAF Origin_ 
 
 
-When using a Web Application Firewall, it is important to apply a set of security rules around your Web Application to block all requests, which are not passing through the WAF service.
+When using a Web Application Firewall, it is important to apply a set of security rules around your Web Application to block all requests which are not passing through the WAF service.
 
-OCI WAF stand in front of your web application to detect and block unwanted/malicious access. . In most cases, your Web Application itself sits behind a Load Balancer. Depending on your architecture and preferences, you may want to assign security rules to your Load Balancer or Web Application subnet by using a Security List, or alternatively you may prefer to assign the security rules to your Load Balancer or Web Application Network Interfaces by using a Network Security Group.
+OCI WAF stand in front of your web application to detect and block unwanted/malicious access. In most cases, your Web Application itself sits behind a Load Balancer. Depending on your architecture and preferences, you may want to assign security rules to your Load Balancer or Web Application _subnets_ by using a _Security List_, or alternatively you may prefer to assign security rules to your Load Balancer or Web Application _Network Interfaces_ by using a _Network Security Group_.
 
-This document will guide you through the steps needed to create and assign a ***Network Security Group*** containing a list of OCI WAF public IP addresses used to send the traffic to your load balancer / Web Application. If you want to use _Security Lists_ for this purpose please consult the following guide : https://github.com/BaptisS/oci_waf_seclist
+
+The following document will guide you through the steps needed to create a ***Network Security Group*** , import Security Rules and assign the desired LBaaS/Compute Virtual Network Interface to it. 
+
+If you want to use _Security Lists_ for this purpose please consult the following guide : https://github.com/BaptisS/oci_waf_seclist
 
 
 
 
 > ***Important Note:*** 
-> If you are using a Load Balancer in front of your Web Application, Security rules must be applied to your Load Balancer subnet (if using Security Lists) or Load Balancer Network Interfaces (if using network Security Groups).
+> If your Web Application sits behind a Load Balancer, Security rules must be applied to your Load Balancer subnet (Security Lists) or to your Load Balancer Network Interfaces (Security Groups).
 
 
 ***Prerequisites:***

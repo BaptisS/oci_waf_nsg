@@ -32,11 +32,11 @@ This document will guide you through the steps needed to create and assign a ***
 
 1.3-	Click on your VCN then select the ***‘Network Security Groups’*** Resources type. 
 
-![PMScreens](/img/01.jpg)
+![PMScreens](/img/01.JPG)
 
 1.4-	Click on the ***‘Create Network Security Group’*** button. 
 
-![PMScreens](/img/02.jpg)
+![PMScreens](/img/02.JPG)
 
 1.5-	Provide a meaningful name for this new Network Security Group. (Ie. ‘OCIWAF-NSG’)
 
@@ -44,21 +44,21 @@ This document will guide you through the steps needed to create and assign a ***
 
 1.7-  Click ***‘Create’*** button to create an empty NSG. 
 
-![PMScreens](/img/03.jpg)
+![PMScreens](/img/03.JPG)
 
 1.7-	In the 'Network Security Group Information' section copy the NSG OCID (click the 'Copy' link in front of 'OCID')  
 
-![PMScreens](/img/04.jpg)
+![PMScreens](/img/04.JPG)
  
 ### 2-    Import Security Rules using Cloud Shell commands.
 
 2.1-	Start your OCI Cloud Shell session. In the OCI Console top right section, click on the Cloud Shell icon:  
 
-![PMScreens](/img/05.jpg)
+![PMScreens](/img/05.JPG)
 
 2.2-	Wait few seconds for your Cloud Shell instance to be started and ready to use.
 
-![PMScreens](/img/06.jpg)
+![PMScreens](/img/06.JPG)
 
 2.3-	Copy and Paste (CTRL+SHIFT+’V’) the command below in your Cloud Shell session.
 
@@ -67,7 +67,7 @@ wafnsg=ocid1.networksecuritygroup.oc1.eu-frankfurt-1.aaaaaaaxxxxx
 ```
 (Replace ‘ocid1.networksecuritygroup.oc1.eu-frankfurt-1.aaaaaaaxxxxx’ by your NSG OCID copied in the previous step.)
 
-![PMScreens](/img/07.jpg)
+![PMScreens](/img/07.JPG)
 
 
 2.4-	Import Security rules. 
@@ -100,29 +100,29 @@ oci network nsg rules add --nsg-id $wafnsg --security-rules file://wafnsg-443-ja
 
 ### 3-    Review the Network Security Group content. 
 
-![PMScreens](/img/08.jpg)
+![PMScreens](/img/08.JPG)
 
 3.1-	Ensure the new NSG has been populated successfully with 50 security rules.  
 
 ### 4-   [Option 1] Assign NSG to your Load Balancer Virtual Network Interfaces.
 4.1-	Go to your Load Balancer dashboard, (OCI Menu -> Networking -> Load Balancers) and then select the Network Security Groups ***‘Edit’*** link . 
 
-![PMScreens](/img/09.jpg)
+![PMScreens](/img/09.JPG)
 
 4.2-	Select the new NSG (ie. OCIWAF-NSG). 
 
-![PMScreens](/img/10.jpg)
+![PMScreens](/img/10.JPG)
 
 4.3-	Click on ***‘Save Changes’*** button.  
 
 ### 4-   [Option 1] Assign NSG to your Load Balancer Virtual Network Interfaces.
 4.1-	Go to your Load Balancer dashboard, (OCI Menu -> Networking -> Load Balancers) and then select the Network Security Groups ***‘Edit’*** link . 
 
-![PMScreens](/img/09.jpg)
+![PMScreens](/img/09.JPG)
 
 4.2-	Select the new NSG (ie. OCIWAF-NSG). 
 
-![PMScreens](/img/10.jpg)
+![PMScreens](/img/10.JPG)
 
 4.3-	Click on ***‘Save Changes’*** button.  
 
@@ -131,11 +131,11 @@ oci network nsg rules add --nsg-id $wafnsg --security-rules file://wafnsg-443-ja
 
 4.4-	Select the newly created Security List (Ie. OCIWAF-SL)  
 
-![PMScreens](/img/10.jpg)
+![PMScreens](/img/10.JPG)
 
 4.5-	Click ***‘Add Security List’*** button to assign the Security to the subnet.  
 
-![PMScreens](/img/11.jpg)
+![PMScreens](/img/11.JPG)
 
 ### 5-   Remove any permissive rules 
 5.1-	Remove any pre-existing permisive rules to lockdown your WAF Origin and allow only incoming traffic from the OCI WAF Public IPs.
